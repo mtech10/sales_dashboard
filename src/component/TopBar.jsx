@@ -1,15 +1,33 @@
+// import React from "react";
+
+// const TopBar = () => {
+//   return (
+//     <header className="flex items-center justify-between border-b border-slate-400 bg-white px-6 py-6">
+//       <div>
+//         <h1 className="text-lg font-semibold text-slate-900">
+//           Good Evening, Ademola
+//         </h1>
+//         <p className="text-sm text-slate-400">Here is your dashboard</p>
+//       </div>
+//       <div className="h-9 w-9 rounded-full bg-slate-200" />
+//     </header>
+//   );
+// };
+
+// export default TopBar;
+
 import React from "react";
 
 const TopBar = () => {
   return (
-    <header className="flex items-center justify-between border-b border-slate-400 bg-white px-6 py-6">
+    <header className="flex items-center justify-between border-b border-slate-400 bg-white p-6">
       <div>
         <h1 className="text-lg font-semibold text-slate-900">
-          Good Evening, Ademola
+          Good Morning, Ademola.
         </h1>
-        <p className="text-sm text-slate-400">Here is your dashboard</p>
+        <p className="text-sm text-slate-400">Here is your Sales Dashboard</p>
       </div>
-      <div className="h-9 w-9 rounded-full bg-slate-200" />
+      <div className="h-9 w-9 bg-slate-200 rounded-full"></div>
     </header>
   );
 };

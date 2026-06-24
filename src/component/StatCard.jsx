@@ -1,7 +1,7 @@
 import React from "react";
 
 const StatCard = () => {
-  return <div>StatCard</div>;
+  return <div>I am the StatCard guy. O before IG</div>;
 };
 
 export default StatCard;
