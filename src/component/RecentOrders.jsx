@@ -1,13 +1,20 @@
 import React, { useState } from "react";
-import { orders } from "../data/data";
+import { orders, ordersTitle } from "../data/data";
 import { Search } from "lucide-react";
 
 const RecentOrders = () => {
   const [query, setQuery] = useState("");
 
-  const filtered = orders.filter((order) =>
-    order.customer.toLowerCase().includes(query.toLowerCase),
-  );
+  const filtered = orders.filter((order) => {
+    const searchTerm = query.toLowerCase();
+    return (
+      order.customer.toLowerCase().includes(searchTerm) ||
+      order.id.toString().toLowerCase().includes(searchTerm) ||
+      order.amount.toString().toLowerCase().includes(searchTerm) ||
+      order.status.toLowerCase().includes(searchTerm)
+    );
+  });
+
   return (
     <div className="bg-white rounded-2xl border border-slate-200 p-5">
       <div className="flex items-center justify-between">
@@ -23,15 +30,34 @@ const RecentOrders = () => {
           />
         </div>
       </div>
-      <table className="mt-4 w-full">
+      <table className="mt-4 w-full text-sm">
         <thead>
           <tr className="text-left text-slate-400">
-            <th className="pb-2 font-medium">Order</th>
-            <th className="pb-2 font-medium">Customer</th>
-            <th className="pb-2 font-medium">Amount</th>
-            <th className="pb-2 font-medium">Status</th>
+            {ordersTitle.map((o) => (
+              <th key={o.id} className="pb-2 pr-6 font-medium">
+                {o.label}
+              </th>
+            ))}
           </tr>
         </thead>
+        <tbody>
+          {filtered.map((o) => (
+            <tr className="border-t border-slate-100" key={o.id}>
+              <td className="py-3 font-medium text-slate-700">{o.id}</td>
+              <td className="py-3 font-medium text-slate-700">{o.customer}</td>
+              <td className="py-3 font-medium text-slate-700">{o.amount}</td>
+              <td className="py-3 font-medium text-slate-700">{o.status}</td>
+            </tr>
+          ))}
+
+          {filtered.length === 0 && (
+            <tr>
+              <td colSpan={4} className="py-6 text-center text-slate-400">
+                No customer match "{query}"
+              </td>
+            </tr>
+          )}
+        </tbody>
       </table>
     </div>
   );

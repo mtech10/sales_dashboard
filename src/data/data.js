@@ -66,6 +66,19 @@ export const orders = [
     amount: "₦61,000",
     status: "Pending",
   },
+  {
+    id: "#1036",
+    customer: "Chiamaka Ada",
+    amount: "₦64,000",
+    status: "Failed",
+  },
+];
+
+export const ordersTitle = [
+  { label: "Order", id: "1" },
+  { label: "Customer", id: "2" },
+  { label: "Amount", id: "3" },
+  { label: "Status", id: "4" },
 ];
 
 export const navItems = [
