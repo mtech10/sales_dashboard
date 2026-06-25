@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { orders, ordersTitle } from "../data/data";
 import { Search } from "lucide-react";
+import StatusBadge from "./StatusBadge";
 
 const RecentOrders = () => {
   const [query, setQuery] = useState("");
@@ -46,7 +47,9 @@ const RecentOrders = () => {
               <td className="py-3 font-medium text-slate-700">{o.id}</td>
               <td className="py-3 font-medium text-slate-700">{o.customer}</td>
               <td className="py-3 font-medium text-slate-700">{o.amount}</td>
-              <td className="py-3 font-medium text-slate-700">{o.status}</td>
+              <td className="py-3 font-medium text-slate-700">
+                <StatusBadge status={o.status} />
+              </td>
             </tr>
           ))}
 
