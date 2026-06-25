@@ -21,6 +21,7 @@ import TopBar from "./component/TopBar";
 import Sidebar from "./component/Sidebar";
 import RecentOrders from "./component/RecentOrders";
 import RevenueChart from "./component/RevenueChart";
+import StatusBadge from "./component/StatusBadge";
 
 const App = () => {
   return (
@@ -32,6 +33,7 @@ const App = () => {
           <div className="grid grid-cols-4"></div>
           <RevenueChart />
           <RecentOrders />
+          <StatusBadge />
         </main>
       </div>
     </div>
