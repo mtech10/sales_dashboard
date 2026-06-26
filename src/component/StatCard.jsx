@@ -1,7 +1,7 @@
 import React from "react";
 
-const StatCard = ({ label, value, change, Icon: icon, accent }) => {
-  const up = chnage > 0;
+const StatCard = ({ label, value, change, icon: Icon, accent }) => {
+  const up = change > 0;
   return (
     <div className="bg-white rounded-2xl border border-slate-200 p-5">
       <div className="flex items-center justify-between">
