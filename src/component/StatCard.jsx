@@ -13,7 +13,9 @@ const StatCard = ({ label, value, change, icon: Icon, accent }) => {
       <div className="mt-3 text-2xl font-semibold text-slate-900">{value}</div>
       <div
         className={`mt-1 flex items-center gap-1 text-sm ${up ? "text-emerald-600" : "text-rose-600"}`}
-      ></div>
+      >
+        {change}
+      </div>
     </div>
   );
 };

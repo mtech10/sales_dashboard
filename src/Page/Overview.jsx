@@ -11,7 +11,6 @@ const Overview = () => {
           <StatCard key={stat.label} {...stat} />
         ))}
       </div>
-      {/* <StatCard /> */}
       <RevenueChart />
       <RecentOrders />
     </>
