@@ -6,12 +6,14 @@ import RevenueChart from "./component/RevenueChart";
 import StatusBadge from "./component/StatusBadge";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./component/Layout";
-import Overview from "./component/Overview";
-import Products from "./component/Products";
-import CustomerPage from "./component/CustomerPage";
-import SettingsPage from "./component/SettingsPage";
+import Overview from "./Page/Overview";
+import Products from "./Page/ProductPage";
+import CustomerPage from "./Page/CustomerPage";
+import SettingsPage from "./Page/SettingsPage";
+import { useProducts } from "./context/ProductContext";
 
 const App = () => {
+  const { products } = useProducts();
   return (
     <Routes>
       <Route element={<Layout />}>
