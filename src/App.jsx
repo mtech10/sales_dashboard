@@ -1,10 +1,5 @@
 import React from "react";
-import TopBar from "./component/TopBar";
-import Sidebar from "./component/Sidebar";
-import RecentOrders from "./component/RecentOrders";
-import RevenueChart from "./component/RevenueChart";
-import StatusBadge from "./component/StatusBadge";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Layout from "./component/Layout";
 import Overview from "./Page/Overview";
 import ProductPage from "./Page/ProductPage";
@@ -21,6 +16,7 @@ const App = () => {
         <Route path="/orders" element={<ProductPage />} />
         <Route path="/customers" element={<CustomerPage />} />
         <Route path="/settings" element={<SettingsPage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>
   );
